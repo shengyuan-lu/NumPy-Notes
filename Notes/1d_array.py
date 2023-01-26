@@ -108,22 +108,34 @@ def vector_indexing():
 
     print()
 
+def where():
+
+    print('NP Where')
+
+    a = np.array([1,2,3,4,5,6,7,6,5,4,3,2,1])
+
+    # returns a tuple of arrays
+    b = np.where(a > 5) # (array([5, 6, 7]),)
+
+    print(b)
+
+    # get the 1d array, index using [0]
+    print(b[0])
+
+    print()
+
 
 def test():
 
     print('Test')
 
-    a = np.arange(5, 15)
-    print(a)
-    result = a[::3]
+    f = np.arange(1840, 1860)
+    g = np.where(f > 1850)
+    result = f[g]
 
     print(result)
 
-    a = np.arange(1, 5)
-    print(a)
-    result = a[::-1]
-    print(result)
-
+    print()
 
 
 
@@ -136,6 +148,8 @@ if __name__ == '__main__':
     array_init()
 
     vector_indexing()
+
+    where()
 
     test()
 
