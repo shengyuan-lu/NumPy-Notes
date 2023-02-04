@@ -40,19 +40,27 @@ def two():
 
     plt.show()
 
+def three():
+    # Difference between “axes” and “axis” in matplotlib?
+    # Axes: given figure can contain many axes
+    # Axis: These are the number-line-like objects
 
-# Difference between “axes” and “axis” in matplotlib?
-# Axes: given figure can contain many axes
-# Axis: These are the number-line-like objects
+    # plt.figure just creates a figure (but with no axes in it)
+    # plt.figure() is usually used when you want more customization to you axes, such as positions, sizes, colors and etc
+    plt.figure(1, figsize = (400,8))
 
-# plt.figure just creates a figure (but with no axes in it)
-# plt.figure() is usually used when you want more customization to you axes, such as positions, sizes, colors and etc
-plt.figure(1, figsize = (400,8))
+    # plt.subplots takes optional arguments (ex: plt.subplots(2, 2)) to create an array of axes in the figure
+    # plt.subplots() is recommended for generating multiple subplots in grids
+    fig, ax = plt.subplots()
+    fig.set_size_inches(400, 8)
 
-# plt.subplots takes optional arguments (ex: plt.subplots(2, 2)) to create an array of axes in the figure
-# plt.subplots() is recommended for generating multiple subplots in grids
-fig, ax = plt.subplots()
-fig.set_size_inches(400, 8)
+def four():
+    fig = plt.figure()
+    fig.add_subplot(221)  # top left
+    fig.add_subplot(222)  # top right
+    fig.add_subplot(223)  # bottom left
+    fig.add_subplot(224)  # bottom right
+    plt.show()
 
 if __name__ == '__main__':
-    two()
+    four()
